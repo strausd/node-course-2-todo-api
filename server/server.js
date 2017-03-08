@@ -7,6 +7,7 @@ var {Todo} = require("./models/todo");
 var {User} = require("./models/user");
 
 var app = express();
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
@@ -49,8 +50,8 @@ app.get('/todos/:id', (req, res) => {
     
 });
 
-app.listen(process.env.PORT, () => {
-    console.log('Started on port', process.env.PORT);
+app.listen(port, () => {
+    console.log('Started on port', port);
 });
 
 module.exports = {app};
